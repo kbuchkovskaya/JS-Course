@@ -50,29 +50,19 @@ class AgeUnder14{
 }
 
 function checkAge(age){
-    if(age === ''){
-        try {
+    try {
+        if(age === ''){
             throw new EmptyString("The field is empty! Please enter your age");
-        } catch (exception) {
-            console.log(exception.name);
-            console.log(exception.message);
-        }
-    } else if(isNaN(age)){
-        try {
+        } else if(isNaN(age)){
             throw new NotANumber("Entered age is not a number");
-        } catch (exception) {
-            console.log(exception.name);
-            console.log(exception.message);
-        }
-    } else if(age < 14){
-        try {
+        } else if(age < 14){
             throw new AgeUnder14("Your age is under 14");
-        } catch (exception) {
-            console.log(exception.name);
-            console.log(exception.message);
+        } else {
+            console.log("You are qllowed to watching");
         }
-    } else {
-        console.log("You are qllowed to watching");
+    } catch (exception) {
+        console.log(exception.name);
+        console.log(exception.message);
     }
 }
 
@@ -140,15 +130,7 @@ function showUserId(id){
     if(id > 0){
         user.id = id;
         return user;
-    } else
-    try {
-        throw new IdException("Id cannot be less than 0: " + id); 
     }
-    catch (exception) {   
-        console.log(exception.name);
-        console.log(exception.message);
-    }
-
 }
 
 console.log(showUserId(id));
@@ -167,6 +149,11 @@ function showUserIds(ids){
         showUserId(ids[i]);
         if(ids[i] > 0){
             correctIds.push({id : ids[i]});
+        } else try {
+            throw new IdException("Id cannot be less than 0: " + ids[i]);
+        } catch (exception) {   
+            console.log(exception.name);
+            console.log(exception.message);
         }
     }
     return console.log(correctIds);
