@@ -1,17 +1,20 @@
 //1
+let total1 = 1
 let numbers = [2, 3, 4, 5];
 
 for(let i = 0; i < numbers.length; i++){
-    if (numbers[i] === 4) {
-        continue;
-    }
+    total1 = total1 * numbers[i];
 }
 
-while(numbers.length <= 3){
-    if (numbers.includes(3)){
-        continue;
-    }
+console.log("Total1: " + total1);
+
+let i = 0;
+let total2 = 1;
+while(i < numbers.length){
+    total2 = total2 * numbers[i];
 }
+
+console.log("Total2: " + total1);
 
 //2
 for(let i = 0; i < 15; i++){
