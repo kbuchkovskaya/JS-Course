@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src='internal.js' defer></script>
+</head>
+<body>
+    <p id ='text'>I learn JavaScript events!</p> 
+    <div> 
+        <button onclick="changeCSS()">Change style!</button> 
+    </div>
+    &nbsp;
+    <div id="task3">
+        <button onclick="backgroungChange('blue')">btn1</button> 
+        <button ondblclick="backgroungChange('pink')">btn2</button> 
+        <button onpointerdown="backgroungChange('brown')" onpointerup="backgroungChange('white')">btn3</button> 
+        <a href="http://google.com" onmouseover="backgroungChange('yellow')" onmouseout="backgroungChange('white')"> Link </a>
+    </div>
+    &nbsp;
+    <div>
+        <select id="select">
+            <option>Item 1</option>
+            <option>Item 2</option>
+            <option>Item 3</option>
+            <option>Item 4</option>
+            <option>Item 5</option>
+        </select>
+        <button onclick="removeItemFromList()">Click there</button>
+    </div>
+    &nbsp;
+    <div id="task5">
+        <button>Click</button>
+        &nbsp;
+        <label id="result1" ></label> 
+    </div>
+    &nbsp;
+    <div id="task6">
+        <label id="result"></label>
+    </div>
+</body>
+</html>
