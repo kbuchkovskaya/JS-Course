@@ -65,12 +65,12 @@ console.log("Course: " + student1.showCourse());
 
 //4
 class Worker {
-    _experience = Number(1.2);
+    #experience = Number(1.2);
     setExperience(value){
-        this._experience = Number(value);
+        this.#experience = Number(value);
     }
     getExperience(){
-        return Number(this._experience);
+        return Number(this.#experience);
     }
     constructor(name, lastName, dayRate, workingDays){
         this.name = name;
@@ -82,7 +82,7 @@ class Worker {
         return this.dayRate * this.workingDays;
     }
     showSalaryWithExperience(){
-        return this.showSalary() * this._experience;
+        return this.showSalary() * this.#experience;
     }
     showSalaryWithNewExperience(){
         return this.showSalary() * this.getExperience();
@@ -114,7 +114,7 @@ workers.push(worker3);
 
 console.log("Salary: " + worker1.showSalary());
 worker2.setExperience(1.5);
-console.log("New experiecne:  " + worker2.getExperience());
+console.log("New experience:  " + worker2.getExperience());
 console.log(worker2.showSalaryWithExperience());
 
 sort(workers);
