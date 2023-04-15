@@ -1,0 +1,14 @@
+{
+  "name": "hw10",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "internal.js",
+  "scripts": {
+    "test": "test command"
+  },
+  "author": "kbuch",
+  "license": "ISC",
+  "dependencies": {
+    "systeminformation": "^5.17.12"
+  }
+}
