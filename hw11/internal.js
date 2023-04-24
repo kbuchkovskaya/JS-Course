@@ -2,7 +2,7 @@
 //Click on window -> type run and hit enter -> in the command window copy:
 //chrome.exe --user-data-dir="C://Chrome dev session" --disable-web-security
 
-let ajaxRequest = new XMLHttpRequest();
+/*let ajaxRequest = new XMLHttpRequest();
 
 const button = document.getElementsByTagName('button').item(0);
 
@@ -11,7 +11,7 @@ function updateButtonText(){
     ajaxRequest.send(button.innerText = "Your vote is accepted: " + new Date());   
 }
 
-button.addEventListener('click', updateButtonText);
+button.addEventListener('click', updateButtonText);*/
 
 //2
 
