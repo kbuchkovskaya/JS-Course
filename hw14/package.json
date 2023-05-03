@@ -1,0 +1,16 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "hw14",
+  "main": "internal.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.5.0",
+    "mocha": "^10.2.0",
+    "selenium-webdriver": "^4.9.0"
+  }
+}
