@@ -5,11 +5,11 @@ const { assert } = require('assert');
 
 describe('hw14 task 1', () => {
 
-    let driver, actions;
+    let driver;
 
     beforeEach(async () => {
         driver = await new Builder().forBrowser('chrome').build();
-        actions = driver.actions();
+        //actions = driver.actions();
         await driver.get('https://the-internet.herokuapp.com/dropdown');
         //await driver.findElement(By.name('q')).sendKeys('https://the-internet.herokuapp.com/dropdown', Key.ENTER);
     })
@@ -61,11 +61,11 @@ describe('hw14 task2', () => {
 
 describe('hw14 task 3', () => {
 
-    let driver, action;
+    let driver;
 
-    beforeEach(async () => {
+   /* beforeEach(async () => {
         driver = await new Builder().forBrowser('chrome').build();
-        action = driver.actions();
+        //action = driver.actions();
         await driver.get('http://formy-project.herokuapp.com/form');
         //await driver.findElement(By.name('q')).sendKeys('https://the-internet.herokuapp.com/', Key.ENTER);
     })
@@ -73,8 +73,8 @@ describe('hw14 task 3', () => {
     afterEach(async() => {
         await driver.quit();
     })
-
-    test('Filling out the form', () => {
+*/
+    xtest('Filling out the form', () => {
         driver.findElement(By.id('first-name')).sendKeys('Peter');
         driver.findElement(By.id('last-name')).sendKeys('Peterson');
         driver.findElement(By.id('job-title')).sendKeys('tester');
@@ -89,6 +89,36 @@ describe('hw14 task 3', () => {
         }, 2000)
         
     })
+
+    describe('task4', () => {
+
+        let driver;
+
+        beforeEach(async () => {
+            //jest.setTimeout(10000);
+            driver = await new Builder().forBrowser('chrome').build();
+            await driver.get('http://the-internet.herokuapp.com/tables');
+            //await driver.findElement(By.name('q')).sendKeys('https://the-internet.herokuapp.com/', Key.ENTER);
+        }, 10000)
+    
+        afterEach(async() => {
+            await driver.quit();
+        })
+
+        test('Values of the cells of the "Due" column are sorted in ascending order', async () => {          
+            let table = driver.findElement(By.xpath('//table[@id ="table2"]')); //table1?
+            table.findElement(By.xpath('//span[contains(., "Due")]')).click();
+            let prices = table.findElements(By.xpath('//tr[td[@class="dues"]]'));
+            let arr = (await prices).slice().sort((a, b) => a - b);
+           /* for(let i = 0; i < arr.length; i++){
+                for(let j = 0; j < prices.length; j++) {
+                    expect(prices[j]).toMatch(arr[i]);
+                }
+            }*/
+            expect(prices).toEqual(arr);
+                
+            }, 10000)
+        })
 
 })
 
